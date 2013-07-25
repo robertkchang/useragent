@@ -10,6 +10,8 @@ class UserAgent
       end
 
       def browser
+        # Added Chrome for iOS
+        # SEE: https://developers.google.com/chrome/mobile/docs/user-agent
         if detect_product('Chrome') || detect_product('CriOS')
           'Chrome'
         elsif os =~ /Android/

@@ -1236,7 +1236,6 @@ describe "Mozilla/5.0 (Linux; Android 4.2; Nexus 7 Build/JOP40C) AppleWebKit/535
   it { @useragent.should be_mobile }
 end
 
-# Chrome on iOS
 describe "UserAgent: Mozilla/5.0 (iPhone; CPU iPhone OS 6_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.12 Mobile/10B142 Safari/8536.25" do
   before do
     @useragent = UserAgent.parse("Mozilla/5.0 (iPhone; CPU iPhone OS 6_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.12 Mobile/10B142 Safari/8536.25")
