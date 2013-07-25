@@ -10,7 +10,7 @@ class UserAgent
       end
 
       def browser
-        if detect_product('Chrome')
+        if detect_product('Chrome') || detect_product('CriOS')
           'Chrome'
         elsif os =~ /Android/
           'Android'

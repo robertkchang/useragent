@@ -1236,6 +1236,39 @@ describe "Mozilla/5.0 (Linux; Android 4.2; Nexus 7 Build/JOP40C) AppleWebKit/535
   it { @useragent.should be_mobile }
 end
 
+# Chrome on iOS
+describe "UserAgent: Mozilla/5.0 (iPhone; CPU iPhone OS 6_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.12 Mobile/10B142 Safari/8536.25" do
+  before do
+    @useragent = UserAgent.parse("Mozilla/5.0 (iPhone; CPU iPhone OS 6_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.12 Mobile/10B142 Safari/8536.25")
+  end
+
+  it "should return '536.26' as its build" do
+    @useragent.build.should == "536.26"
+  end
+
+  it "should return '6.1' as its version" do
+    @useragent.version.should == "6.1"
+  end
+
+  it "should return '536.26' as its webkit version" do
+    @useragent.webkit.version.should == "536.26"
+  end
+
+  it "should return 'Chrome' as its browser" do
+    @useragent.browser.should == "Chrome"
+  end
+
+  it "should return 'iPhone' as its platform" do
+    @useragent.platform.should == "iPhone"
+  end
+
+  it "should return 'CPU iPhone OS 6_1 like Mac OS X' as its os" do
+    @useragent.os.should == "CPU iPhone OS 6_1 like Mac OS X"
+  end
+
+  it { @useragent.should be_mobile }
+end
+
 describe "UserAgent: 'Mozilla/5.0 (BlackBerry; U; BlackBerry 9800; en) AppleWebKit/534.1+ (KHTML, Like Gecko) Version/6.0.0.141 Mobile Safari/534.1+'" do
   before do
     @useragent = UserAgent.parse("Mozilla/5.0 (BlackBerry; U; BlackBerry 9800; en) AppleWebKit/534.1+ (KHTML, Like Gecko) Version/6.0.0.141 Mobile Safari/534.1+")
